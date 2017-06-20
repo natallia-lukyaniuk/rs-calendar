@@ -1,0 +1,198 @@
+.rs-calendar-body {
+  .calendar {
+    display: flex;
+    flex-direction: column;
+    top: 70px;
+    // right: 304px;
+    right: 0;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .calendar-top {
+    flex-shrink: 0;
+    padding-top: 40px;
+    background: rgba(255, 255, 255, .95);
+    position: relative;
+    z-index: 2;
+  }
+
+  .calendarDayHeaders {
+    padding: 0 0 0 80px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    border-right: 1px solid rgb(216, 221, 230);
+    display: flex;
+  }
+
+  .bumpForScrollBar {
+    .calendarDayHeaders {
+      padding-right: 15px;
+    }
+  }
+
+  .calendarDayHeader {
+    position: relative;
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    flex-basis: 100%;
+    &:after {
+      content: '';
+      position: absolute;
+      border-left: 1px solid rgb(216, 221, 230);
+      top: 40px;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .calendarEvent {
+    position: absolute;
+    left: 0;
+    right: 0;
+    list-style-type: none;
+    &.isStartBeforeRange {
+      .eventBox {
+        &:before {
+          content: '';
+          width: 20.5060966544px;
+          height: 20.5060966544px;
+          position: absolute;
+          top: 10%;
+          left: -10px;
+          transform: rotate(45deg);
+          border: 1.2px solid #fff;
+          border-radius: 0 30px 0 0;
+          border-top: none;
+          border-right: none;
+        }
+      }
+    }
+    &.isEndAfterRange {
+      padding-right: 14px;
+      .eventBox {
+        &:after {
+          left: auto;
+          right: -10px;
+          -webkit-transform: rotate(-135deg);
+          -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+          content: '';
+          width: 20.5060966544px;
+          height: 20.5060966544px;
+          position: absolute;
+          top: 10%;
+          // left: 110px;
+          transform: rotate(225deg);
+          border: 1.2px solid #fff;
+          border-radius: 0 30px 0 0;
+          border-top: none;
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  .allDayEvent {
+    position: relative;
+    &:last-child {
+      margin-bottom: 1px;
+    }
+  }
+
+  .isStartBeforeRange {
+    .eventBox {
+      margin-left: 14px;
+      &:before {
+        display: block;
+        margin-top: 1px;
+        height: 100%;
+        background: inherit;
+        font-size: .75rem;
+        color: rgb(22, 50, 92);
+      }
+    }
+  }
+
+  .isEndAfterRange {
+    .eventBox {
+      &:after {
+        display: block;
+        margin-top: 1px;
+        height: 100%;
+        background: inherit;
+        // background: #ebf7ff;
+        font-size: .75rem;
+        color: rgb(22, 50, 92);
+      }
+    }
+  }
+
+  .eventBox {
+    border: 1px solid #fff;
+    transition: all .5s;
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    max-height: 100%;
+    display: block;
+    margin-top: 1px;
+    height: 100%;
+    background: #ebf7ff;
+    font-size: .75rem;
+    color: rgb(22, 50, 92);
+  }
+
+  .eventDefinitionList {
+    padding: 5px 8px;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    &.allDayEvent {
+    padding: 5px;
+    white-space: nowrap;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+  }
+
+  .calendarEvent {
+    position: absolute;
+    left: 0;
+    right: 0;
+    list-style-type: none;
+  }
+
+  .eventBox {
+    background: #ebf7ff;
+    border: 1px solid #fff;
+    transition: all .5s;
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    max-height: 100%;
+    display: block;
+    margin-top: 1px;
+    height: 100%;
+    font-size: .75rem;
+    color: rgb(22, 50, 92);
+  }
+
+  .eventDefinitionList {
+    padding: 5px 8px;
+    flex-wrap: wrap;
+    white-space: nowrap;
+  }
+}

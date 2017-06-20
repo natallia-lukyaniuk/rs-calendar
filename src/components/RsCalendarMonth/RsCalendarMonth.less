@@ -1,0 +1,53 @@
+.rs-calendar-month {
+  .calendarMonthDayHeaders {
+    padding: 0;
+  }
+
+  .forceCalendarMonthView {
+    height: 90%;
+    border-top: 1px solid rgb(216, 221, 230);
+    border-bottom: 1px solid rgb(216, 221, 230);
+    overflow-y: auto;
+    overflow-y: overlay;
+    .calendarWeek {
+      border-top: 1px solid rgb(216, 221, 230);
+      width: 100%;
+      position: relative!important;
+    }
+    .calendarWeekBackground {
+      height: 100%;
+      position: absolute;
+      display: table;
+      width: inherit;
+    }
+    .calendarWeekDay {
+      width: 14.28571428571429%;
+      display: table-cell;
+      height: 100%;
+      border-right: 1px solid rgb(216, 221, 230);
+      position: relative;
+    }
+    .dayHeader {
+      padding: 5px 0 0 5px;
+      color: rgb(22, 50, 92);
+      font-size: .75rem;
+    }
+    .calendarWeekList {
+      height: calc(100% - 25px);
+      margin-top: 25px!important;
+      position: relative;
+      padding-left: 0;
+      overflow: hidden;
+    }
+    .calendarEvent {
+      position: absolute!important;
+    }
+  }
+
+  .forceCalendarMonthWeek {
+    .calendarEvent {
+      border-left: 2px solid transparent;
+      border-right: 1px solid transparent;
+    }
+  }
+}
